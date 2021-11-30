@@ -4,8 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:hypedevs/eslint-config.git",
   "author": "Kacper Polak <kacper@hypequality.com>",
-  "license": "NOLICENSE",
-  "peerDependencies": {
+  "license": "MIT",
+  "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "eslint": "^8.3.0",
