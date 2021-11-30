@@ -1,6 +1,6 @@
 {
   "name": "@hypedevs/eslint-config",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "main": "index.js",
   "repository": "git@github.com:hypedevs/eslint-config.git",
   "author": "Kacper Polak <kacper@hypequality.com>",
