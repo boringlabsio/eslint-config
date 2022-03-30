@@ -1,11 +1,27 @@
 name: Publish package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+      - master
 
 jobs:
-  build:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Release
+        uses: justincy/github-action-npm-release@2.0.2
+        id: release
+
+  publish_gh_registry:
+    name: "Publish to github registry"
+    needs: [release]
     runs-on: ubuntu-latest 
     permissions: 
       contents: read
@@ -16,7 +32,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@hypedevs'
+          scope: '@boringlabsio'
       - run: yarn
       - run: yarn publish
         env:
